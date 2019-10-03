@@ -2,3 +2,4 @@
 #include <stdlib.h>
 
 int function(char * name);
+int main();

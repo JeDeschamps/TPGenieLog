@@ -3,6 +3,7 @@ package roman;
 
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
+import java.io.*;
 
 public final class RomanNumber extends Number {
   
@@ -100,9 +101,10 @@ public final class RomanNumber extends Number {
     if (romanValue == VALIDATION_RE)
     {
 
+
+      romanValue.toCharArray();  //charAt(i) //charToArray
       for (int i = 0 ; i < romanValue.length() ; i++)
       {
-        charAt(i)
       }
       return valeur;
     }

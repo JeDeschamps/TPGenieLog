@@ -3,6 +3,7 @@ package roman;
 
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
+import java.util.regex.*;
 import java.io.*;
 
 public final class RomanNumber extends Number {
@@ -84,7 +85,7 @@ public final class RomanNumber extends Number {
 
   public static void valueOf(double value)
   {
-    throw new illegalException();
+    throw new IllegalArgumentException();
   }
 
   public static RomanNumber valueOf(String roman) {
@@ -98,13 +99,14 @@ public final class RomanNumber extends Number {
   private static int fromRoman(String romanValue) {
     int valeur;
 
-    if (romanValue == VALIDATION_RE)
+    Matcher m = VALIDATION_RE.matcher(romanValue);
+    boolean estValide = m.matches();
+    if (estValide)
     {
-
-
       romanValue.toCharArray();  //charAt(i) //charToArray
       for (int i = 0 ; i < romanValue.length() ; i++)
       {
+        
       }
       return valeur;
     }

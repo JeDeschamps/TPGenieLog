@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
 
 public final class RomanNumber extends Number {
-
+  
   public static final long serialVersionUID = 1L;
 
   // Table des symboles
@@ -81,6 +81,11 @@ public final class RomanNumber extends Number {
     return toRoman(this.value);
   }
 
+  public static void RomanNumber valueOf(double value)
+  {
+    throw new illegalException();
+  }
+
   public static RomanNumber valueOf(String roman) {
     return new RomanNumber(roman);
   }
@@ -90,8 +95,17 @@ public final class RomanNumber extends Number {
   }
 
   private static int fromRoman(String romanValue) {
-    // TODO
-    return 0;
+    int valeur;
+
+    if (romanValue == VALIDATION_RE)
+    {
+
+      for (int i = 0 ; i < romanValue.length() ; i++)
+      {
+        charAt(i)
+      }
+      return valeur;
+    }
   }
 
   private static String toRoman(int value) {

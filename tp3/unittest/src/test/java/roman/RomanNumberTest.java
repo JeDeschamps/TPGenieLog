@@ -75,12 +75,12 @@ public class RomanNumberTest {
     for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) {
       assertThat(RomanNumber.valueOf(v.getValue()).intValue(), is(v.getKey()));
     }
-  }/*
+  }
 	@Test
 	public void fromIntValues() {
     for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) {
       assertThat(RomanNumber.valueOf(v.getValue()).keyValue(), is(v.getValue()));
-    }*/
+    }
 
   // int -> RomanNumber
   @Test(expected = IllegalArgumentException.class)
@@ -114,17 +114,25 @@ public class RomanNumberTest {
 	}
 
 	//Antecedents incorrects
-	@Test(expected = IllegalArgumentExcpetion.class)
+	@Test(expected = IllegalArgumentException.class)
 	public void impossiblePreviousPredecessor()
 	{ 
 		RomanNumber.valueOf("VX");
 	}
-
-
-
-
-
+	/*Début tests de validité */
 	//Assert pour les tests de validite
+	
+	//Tests si toRoma fromRoman sont complementaires
+	@Test
+	public void complementaire()
+	{
+		for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) {
+			assertTrue( fromRoman(toRoman(v.getKey()) == v.getKey());
+	}
+	// toRoman retourne que des capitales
+	@Test
+	public void onlyCapital()
+	
 }
 
 

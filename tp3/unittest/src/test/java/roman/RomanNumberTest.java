@@ -132,6 +132,9 @@ public class RomanNumberTest {
 	// toRoman retourne que des capitales
 	@Test
 	public void onlyCapital()
+	{
+		
+	}
 	
 }
 

@@ -81,7 +81,7 @@ public final class RomanNumber extends Number {
     return toRoman(this.value);
   }
 
-  public static void RomanNumber valueOf(double value)
+  public static void valueOf(double value)
   {
     throw new illegalException();
   }

@@ -75,12 +75,55 @@ public class RomanNumberTest {
     for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) {
       assertThat(RomanNumber.valueOf(v.getValue()).intValue(), is(v.getKey()));
     }
-  }
+  }/*
+	@Test
+	public void fromIntValues() {
+    for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) {
+      assertThat(RomanNumber.valueOf(v.getValue()).keyValue(), is(v.getValue()));
+    }*/
 
   // int -> RomanNumber
   @Test(expected = IllegalArgumentException.class)
   public void toRomanZero() {
     RomanNumber.valueOf(0);
-  }
+  } 
 
+	// Lever une exception pour des valeurs négatives
+	@Test(expected = IllegalArgumentException.class)
+	public void negativeValue() {
+		RomanNumber.valueOf(-1);
+	}
+	
+	// Echouer pour des valeurs non entières
+  @Test(expected = IllegalArgumentException.class)
+	public void floatNumber() {
+		RomanNumber.valueOf(1.15);
+	}
+	
+	//Echouer pour des valeurs en dehors de l'intervalle [1,3999]
+  @Test(expected = IllegalArgumentException.class)
+	public void outOfBound() {
+		RomanNumber.valueOf(0);
+		RomanNumber.valueOf(4000);
+	}
+	//Echouer pour trop de repetitions de symbole
+	@Test(expected = IllegalArgumentException.class)
+	public void tooMuchRep()
+	{
+		RomanNumber.valueOf("XXXXX");
+	}
+
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+

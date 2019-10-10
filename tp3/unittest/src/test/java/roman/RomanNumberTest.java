@@ -106,6 +106,12 @@ public class RomanNumberTest {
 		RomanNumber.valueOf(0);
 		RomanNumber.valueOf(4000);
 	}
+	//Echouer pour trop de repetitions de symbole
+	@Test(expected = IllegalArgumentException.class)
+	public void tooMuchRep()
+	{
+		RomanNumber.valueOf("XXXXX");
+	}
 
 	
 	

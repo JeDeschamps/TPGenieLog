@@ -110,11 +110,21 @@ public class RomanNumberTest {
 	@Test(expected = IllegalArgumentException.class)
 	public void tooMuchRep()
 	{
-		RomanNumber.valueOf("XXXXX");
+		RomanNumber.valueOf("IXIXIX");
 	}
 
-	
-	
+	//Antecedents incorrects
+	@Test(expected = IllegalArgumentExcpetion.class)
+	public void impossiblePreviousPredecessor()
+	{ 
+		RomanNumber.valueOf("VX");
+	}
+
+
+
+
+
+	//Assert pour les tests de validite
 }
 
 

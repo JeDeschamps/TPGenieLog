@@ -95,6 +95,14 @@ public final class RomanNumber extends Number {
   public static RomanNumber valueOf(int value) {
     return new RomanNumber(value);
   }
+	/***********************************************************************/
+	/* Methode fromRoman (String romanValue 															 */
+	/* Entrée : string correspondant a un chiffre romain									 */
+	/* 																																		 */
+	/* Sortie : teste la validite et renvoie des IllegalArgumentException  */
+	/* si la string n'est pas valide																			 */
+	/* Sinon, renvoie un entier correspondant a la valeur de la string		 */
+	/***********************************************************************/
 
 	private static int fromRoman(String romanValue)
 	{
@@ -111,7 +119,7 @@ public final class RomanNumber extends Number {
 		String tmp = ""; //Nous servira a combiner deux symboles si besoin
 		while ( i < romanValue.length() )
 		{
-				/* Il faut verifier que la combinaison de deux char consecutifs n'est pas soustractive sinon on le traitera comme une paire */
+		/* Il faut verifier que la combinaison de deux char consecutifs n'est pas soustractive sinon on le traitera comme une paire */
 			if ( SYMBOLS.get(romanValue.charAt(i)) < SYMBOLS.get(romanValue.charAt(i + 1)))
 			{
 				tmp = String.valueOf(romanValue.charAt(i)) +  String.valueOf(romanValue.charAt(i + 1));
@@ -127,8 +135,25 @@ public final class RomanNumber extends Number {
 		}
 		return result;
 	}
+
+	/***********************************************************************/
+	/* Methode toRoman ( int value ) 													 						 */
+	/* Entree : un entier correspondant au chiffre a traduire							 */
+	/*																																		 */
+	/* Sortie : un string correspondant au chiffre romain									 */
+	/* Renvoie des exceptions si la vleur entrée n'est pas valide (entier) */
+	/* compris entre 1 et 3999 inclus																			 */
+	/***********************************************************************/
   private static String toRoman(int value) {
-    // TODO
+    String result = "";
+		if ( value <= 0 && value >= 4000)
+		{
+			throw new IllegalArgumentException();
+		}
+		/* On va continuer l'execution jusqu'a ce que la valeur tombe a 0 */
+		while ( value > 0 )
+		{
+		}
     return "";
   }
 }

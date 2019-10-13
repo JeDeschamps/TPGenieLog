@@ -8,7 +8,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
 
-public class RomanNumberTest {
+public class RomanNumberTest 
+{
   public static final HashMap<Integer, String> KNOWN_VALUES = new HashMap<>();
   static {
     KNOWN_VALUES.put(1, "I");
@@ -68,74 +69,93 @@ public class RomanNumberTest {
     KNOWN_VALUES.put(3940, "MMMCMXL");
     KNOWN_VALUES.put(3999, "MMMCMXCIX");
   }
+	/* Debut des tests de reussite*/
 
-  // String -> RomanNumber
+  /* Donner les bonnes valeurs decimales pour des valeurs romaines connues */
+	/* Test fourni par l'énoncé */
   @Test
-  public void fromRomanKnownValues() {
-    for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) {
+  public void fromRomanKnownValues() 
+	{
+    for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet())
+		{
       assertThat(RomanNumber.valueOf(v.getValue()).intValue(), is(v.getKey()));
     }
   }
+	/* Donner les bonnes valeurs romaines pour des valeurs decimales connues */
 	@Test
-	public void fromIntValues() {
-    for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) {
-      assertThat(RomanNumber.valueOf(v.getValue()).keyValue(), is(v.getValue()));
+	public void fromIntValues() 
+	{
+    for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) 
+		{
+      assertThat(RomanNumber.valueOf(v.getKey()).intValue(), is(v.getValue()));
     }
+	}
 
-  // int -> RomanNumber
+	/* Echouer pour une valeur = 0 */
   @Test(expected = IllegalArgumentException.class)
-  public void toRomanZero() {
+  public void toRomanZero() 
+	{
     RomanNumber.valueOf(0);
   } 
 
-	// Lever une exception pour des valeurs négatives
+	/* Echouer pour une valeur negative */
 	@Test(expected = IllegalArgumentException.class)
-	public void negativeValue() {
+	public void negativeValue() 
+	{
 		RomanNumber.valueOf(-1);
 	}
 	
-	// Echouer pour des valeurs non entières
+	/* Echouer pour des valeurs décimales */
   @Test(expected = IllegalArgumentException.class)
-	public void floatNumber() {
+	public void floatNumber() 
+	{
 		RomanNumber.valueOf(1.15);
 	}
 	
-	//Echouer pour des valeurs en dehors de l'intervalle [1,3999]
+	/* Echouer pour des valeurs en dehors de l'intervalle [1,3999] */
   @Test(expected = IllegalArgumentException.class)
-	public void outOfBound() {
+	public void outOfBound() 
+	{
 		RomanNumber.valueOf(0);
 		RomanNumber.valueOf(4000);
 	}
-	//Echouer pour trop de repetitions de symbole
+	/* Echouer pour une repetition de symbole non autorisee */
 	@Test(expected = IllegalArgumentException.class)
 	public void tooMuchRep()
 	{
 		RomanNumber.valueOf("IXIXIX");
 	}
 
-	//Antecedents incorrects
+	/* Echouer pour des antecedents incorrects */
 	@Test(expected = IllegalArgumentException.class)
 	public void impossiblePreviousPredecessor()
 	{ 
 		RomanNumber.valueOf("VX");
 	}
 	/*Début tests de validité */
-	//Assert pour les tests de validite
 	
-	//Tests si toRoma fromRoman sont complementaires
+	/* Test si toRoman fromRoman sont complementaires */
+	/* Sert aussi a verifier l'unicite du resultat 
 	@Test
 	public void complementaire()
 	{
-		for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) {
-			assertTrue( fromRoman(toRoman(v.getKey()) == v.getKey());
+		for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) 
+		{
+			assertThat(RomanNumber.valueOf(v.getValue()).intValue(), is(RomanNumber.valueOf(RomanNumber.fromRoman(RomanNumber.toRoman(v.getKey())))));
+
+
+
+//assertThat(RomanNumber.valueOf(v.getValue()).intValue(), is(v.getKey()));
+			//assertTrue(fromRoman(toRoman(v.getValue().intValue())) == v.getValue().intValue());
+		}
 	}
-	// toRoman retourne que des capitales
-	@Test
+	/* Verification que toRoman ne retourne que des capitales */
+	/*@Test
 	public void onlyCapital()
 	{
 		
 	}
-	
+	*/
 }
 
 

@@ -96,24 +96,47 @@ public final class RomanNumber extends Number {
     return new RomanNumber(value);
   }
 
-  private static int fromRoman(String romanValue) {
-    int valeur;
-
-    Matcher m = VALIDATION_RE.matcher(romanValue);
-    boolean estValide = m.matches();
-    if (estValide)
-    {
-      romanValue.toCharArray();  //charAt(i) //charToArray
-      for (int i = 0 ; i < romanValue.length() ; i++)
-      {
-        
-      }
-      return valeur;
-    }
-  }
-
+	private static int fromRoman(String romanValue)
+	{
+		int result = 0;
+		/* On va utiliser l'expression reguliere pour valider le chiffre romain */
+		Matcher m = VALIDATION_RE.matcher(romanValue);
+		if (!(m.matches()))
+		{ /* Si la string donne ne respecte pas l'expression on renvoie une erreur */
+			throw new IllegalArgumentException();
+		}
+		/* On commence a implementer la transformation */
+		/* On va parcourir les caracteres de la string et incrementer le resultat au fur et a mesure */
+		int i = 0;
+		String tmp = ""; //Nous servira a combiner deux symboles si besoin
+		while ( i < romanValue.length() )
+		{
+				/* Il faut verifier que la combinaison de deux char consecutifs n'est pas soustractive sinon on le traitera comme une paire */
+			if ( SYMBOLS.get(romanValue.charAt(i)) < SYMBOLS.get(romanValue.charAt(i + 1)))
+			{
+				tmp = String.valueOf(romanValue.charAt(i)) +  String.valueOf(romanValue.charAt(i + 1));
+				i += 2; //On incremente de deux puisqu'on prend 2 caracteres
+			}
+			else 
+			{
+				tmp = String.valueOf(romanValue.charAt(i));
+				i ++;
+			}
+			result += SYMBOLS.get(tmp);
+			tmp = "";
+		}
+		return result;
+	}
   private static String toRoman(int value) {
     // TODO
     return "";
   }
 }
+
+
+
+
+
+
+
+

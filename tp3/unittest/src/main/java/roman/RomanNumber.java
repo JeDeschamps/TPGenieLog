@@ -4,6 +4,7 @@ package roman;
 import java.util.LinkedHashMap;
 import java.util.regex.Pattern;
 import java.util.regex.*;
+import java.util.*;
 import java.io.*;
 
 public final class RomanNumber extends Number {
@@ -150,11 +151,21 @@ public final class RomanNumber extends Number {
 		{
 			throw new IllegalArgumentException();
 		}
+		/*On va creer un iterateur pour le parcours de la HashMap */
+		Set<Map.Entry<String, Integer>> setSymbols = SYMBOLS.entrySet();
+		Iterator<Map.Entry<String, Integer>> iterator = setSymbols.iterator();
 		/* On va continuer l'execution jusqu'a ce que la valeur tombe a 0 */
-		while ( value > 0 )
-		{
+		while ( value > 0 && iterator.hasNext())
+		{		
+//Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()
+				Map.Entry<String, Integer> e = iterator.next();
+				while ( value > e.getValue() )
+				{
+					result += e.getKey();
+					value = value - e.getValue();
+				}
 		}
-    return "";
+    return result;
   }
 }
 

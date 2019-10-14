@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="roman.RomanNumberTest" tests="8" skipped="0" failures="5" errors="0" timestamp="2019-10-13T17:17:16" hostname="ubuntuvdi11.sciences.lan" time="0.041">
+<testsuite name="roman.RomanNumberTest" tests="8" skipped="0" failures="5" errors="0" timestamp="2019-10-14T09:38:22" hostname="ubuntuvdi20.sciences.lan" time="0.038">
   <properties/>
-  <testcase name="fromIntValues" classname="roman.RomanNumberTest" time="0.035">
+  <testcase name="fromIntValues" classname="roman.RomanNumberTest" time="0.036">
     <failure message="java.lang.AssertionError: &#10;Expected: is &quot;I&quot;&#10;     but: was &lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
 Expected: is &quot;I&quot;
      but: was &lt;0&gt;
@@ -57,8 +57,8 @@ Expected: is &quot;I&quot;
 	at java.lang.Thread.run(Thread.java:748)
 </failure>
   </testcase>
-  <testcase name="floatNumber" classname="roman.RomanNumberTest" time="0.001"/>
-  <testcase name="tooMuchRep" classname="roman.RomanNumberTest" time="0.0"/>
+  <testcase name="floatNumber" classname="roman.RomanNumberTest" time="0.0"/>
+  <testcase name="tooMuchRep" classname="roman.RomanNumberTest" time="0.001"/>
   <testcase name="outOfBound" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
@@ -103,7 +103,7 @@ Expected: is &quot;I&quot;
 	at java.lang.Thread.run(Thread.java:748)
 </failure>
   </testcase>
-  <testcase name="negativeValue" classname="roman.RomanNumberTest" time="0.001">
+  <testcase name="negativeValue" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException" type="java.lang.AssertionError">java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
 	at org.junit.internal.runners.statements.ExpectException.evaluate(ExpectException.java:32)
 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
@@ -149,9 +149,9 @@ Expected: is &quot;I&quot;
   </testcase>
   <testcase name="fromRomanKnownValues" classname="roman.RomanNumberTest" time="0.0">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
-	at roman.RomanNumber.fromRoman(RomanNumber.java:123)
-	at roman.RomanNumber.&lt;init&gt;(RomanNumber.java:38)
-	at roman.RomanNumber.valueOf(RomanNumber.java:92)
+	at roman.RomanNumber.fromRoman(RomanNumber.java:124)
+	at roman.RomanNumber.&lt;init&gt;(RomanNumber.java:39)
+	at roman.RomanNumber.valueOf(RomanNumber.java:93)
 	at roman.RomanNumberTest.fromRomanKnownValues(RomanNumberTest.java:81)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

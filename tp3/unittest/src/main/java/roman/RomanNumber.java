@@ -6,6 +6,11 @@ import java.util.regex.Pattern;
 import java.util.regex.*;
 import java.io.*;
 
+import java.util.Set;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
 public final class RomanNumber extends Number {
   
   public static final long serialVersionUID = 1L;
@@ -96,7 +101,7 @@ public final class RomanNumber extends Number {
     return new RomanNumber(value);
   }
 	/***********************************************************************/
-	/* Methode fromRoman (String romanValue 															 */
+	/* Methode fromRoman (String romanValue)															 */
 	/* Entrée : string correspondant a un chiffre romain									 */
 	/* 																																		 */
 	/* Sortie : teste la validite et renvoie des IllegalArgumentException  */
@@ -145,16 +150,32 @@ public final class RomanNumber extends Number {
 	/* compris entre 1 et 3999 inclus																			 */
 	/***********************************************************************/
   private static String toRoman(int value) {
+    /*On initialise un String vide que l'on completera plus tard*/
     String result = "";
+    /*On initialise une table de symbole*/
+    Set<Entry<String, Integer>> couple = SYMBOLS.entrySet();
+    /*On cree un iterator pour la table de symbole au dessus pour pouvoir la parcourir*/
+    Iterator<Entry<String, Integer>> it = couple.iterator();
+    /*Si la valeur donnee en parametre n'est pas valide on envoie une erreur*/
 		if ( value <= 0 && value >= 4000)
 		{
 			throw new IllegalArgumentException();
 		}
-		/* On va continuer l'execution jusqu'a ce que la valeur tombe a 0 */
-		while ( value > 0 )
-		{
+		
+		/*Tant que le couple suivant de la table n'est pas null*/
+    while(it.hasNext())
+    {
+        /*On cree un tmp qui stock le couple actuel de la table*/
+        Entry<String, Integer> tmp = it.next();
+        /*Si la valeur donnee en parametre ? egale a la valeur du couple*/
+        /*Je crois qu'il y a un truc qui ne vas pas, je me suis aide de l'algo du pdf*/
+        while ( value >= tmp.getValue())
+		    {
+          result = result + tmp.getKey();
+          value = value - tmp.getValue();
+        }
 		}
-    return "";
+    return result;
   }
 }
 

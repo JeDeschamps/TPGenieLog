@@ -153,44 +153,26 @@ public final class RomanNumber extends Number {
   private static String toRoman(int value) {
     /*On initialise un String vide que l'on completera plus tard*/
     String result = "";
-    /*On initialise une table de symbole*/
-    Set<Entry<String, Integer>> couple = SYMBOLS.entrySet();
-    /*On cree un iterator pour la table de symbole au dessus pour pouvoir la parcourir*/
-    Iterator<Entry<String, Integer>> it = couple.iterator();
+  
     /*Si la valeur donnee en parametre n'est pas valide on envoie une erreur*/
 		if ( value <= 0 && value >= 4000)
 		{
 			throw new IllegalArgumentException();
 		}
-<<<<<<< HEAD
 		/*On va creer un iterateur pour le parcours de la HashMap */
 		Set<Map.Entry<String, Integer>> setSymbols = SYMBOLS.entrySet();
 		Iterator<Map.Entry<String, Integer>> iterator = setSymbols.iterator();
 		/* On va continuer l'execution jusqu'a ce que la valeur tombe a 0 */
 		while ( value > 0 && iterator.hasNext())
 		{		
-//Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()
+        //Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()
 				Map.Entry<String, Integer> e = iterator.next();
 				while ( value > e.getValue() )
 				{
 					result += e.getKey();
 					value = value - e.getValue();
 				}
-=======
-		
-		/*Tant que le couple suivant de la table n'est pas null*/
-    while(it.hasNext())
-    {
-        /*On cree un tmp qui stock le couple actuel de la table*/
-        Entry<String, Integer> tmp = it.next();
-        /*Si la valeur donnee en parametre ? egale a la valeur du couple*/
-        /*Je crois qu'il y a un truc qui ne vas pas, je me suis aide de l'algo du pdf*/
-        while ( value >= tmp.getValue())
-		    {
-          result = result + tmp.getKey();
-          value = value - tmp.getValue();
-        }
->>>>>>> 19712d1c30fc1d17760aa04da5b2176b8741eb6c
+
 		}
     return result;
   }

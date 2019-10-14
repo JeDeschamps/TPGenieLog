@@ -7,6 +7,10 @@ import org.junit.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.equalTo;
+
 
 public class RomanNumberTest 
 {
@@ -95,29 +99,29 @@ public class RomanNumberTest
   @Test(expected = IllegalArgumentException.class)
   public void toRomanZero() 
 	{
-    RomanNumber.valueOf(0);
+    RomanNumber.valueOf("0");
   } 
 
 	/* Echouer pour une valeur negative */
 	@Test(expected = IllegalArgumentException.class)
 	public void negativeValue() 
 	{
-		RomanNumber.valueOf(-1);
+		RomanNumber.valueOf("-1");
 	}
 	
 	/* Echouer pour des valeurs décimales */
   @Test(expected = IllegalArgumentException.class)
 	public void floatNumber() 
 	{
-		RomanNumber.valueOf(1.15);
+		RomanNumber.valueOf("1.15");
 	}
 	
 	/* Echouer pour des valeurs en dehors de l'intervalle [1,3999] */
   @Test(expected = IllegalArgumentException.class)
 	public void outOfBound() 
 	{
-		RomanNumber.valueOf(0);
-		RomanNumber.valueOf(4000);
+		RomanNumber.valueOf("0");
+		RomanNumber.valueOf("4000");
 	}
 	/* Echouer pour une repetition de symbole non autorisee */
 	@Test(expected = IllegalArgumentException.class)

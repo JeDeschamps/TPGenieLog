@@ -205,12 +205,17 @@ public final class RomanNumber extends Number
     return result;
   }
 
-
-  public int compareTo(String rom)
+	/***********************************************************************/
+	/* Entree : Une string qui correspon a un chiffre romain							 */
+	/*																																		 */
+	/* Sortie : un entier qui vaut 0 si egalite -1 si inferieur et 1 si 	 */
+	/* superieur																													 */
+	/***********************************************************************/
+  public int compareTo(String roman)
   {
     int comp;
     int valeur;
-    valeur = fromRoman(rom);
+    valeur = fromRoman(roman);
     if(this.value < valeur)
     {
       return -1;

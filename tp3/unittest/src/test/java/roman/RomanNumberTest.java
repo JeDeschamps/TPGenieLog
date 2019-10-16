@@ -139,27 +139,23 @@ public class RomanNumberTest
 	/*Début tests de validité */
 	
 	/* Test si toRoman fromRoman sont complementaires */
-	/* Sert aussi a verifier l'unicite du resultat 
+	/* Sert aussi a verifier l'unicite du resultat */
 	@Test
 	public void complementaire()
 	{
 		for (Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()) 
 		{
-			assertThat(RomanNumber.valueOf(v.getValue()).intValue(), is(RomanNumber.valueOf(RomanNumber.fromRoman(RomanNumber.toRoman(v.getKey())))));
-
-
-
-//assertThat(RomanNumber.valueOf(v.getValue()).intValue(), is(v.getKey()));
-			//assertTrue(fromRoman(toRoman(v.getValue().intValue())) == v.getValue().intValue());
-		}
+      assertThat(RomanNumber.valueOf(v.getKey()).intValue(), is(RomanNumber.valueOf(v.getValue())));
+    }
 	}
-	/* Verification que toRoman ne retourne que des capitales */
-	/*@Test
+
+	/* Verification que toRoman ne prend en parametre que des capitales */
+	@Test
 	public void onlyCapital()
 	{
-		
+		RomanNumber.valueOf("iv");
 	}
-	*/
+	
 }
 
 

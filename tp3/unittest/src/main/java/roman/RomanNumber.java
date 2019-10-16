@@ -12,13 +12,15 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public final class RomanNumber extends Number {
+public final class RomanNumber extends Number 
+{
   
   public static final long serialVersionUID = 1L;
 
-  // Table des symboles
+  //Table des symboles
   private static final LinkedHashMap<String, Integer> SYMBOLS = new LinkedHashMap<>();
-  static {
+  static 
+  {
     SYMBOLS.put("M",  1000);
     SYMBOLS.put("CM", 900);
     SYMBOLS.put("D",  500);
@@ -40,52 +42,116 @@ public final class RomanNumber extends Number {
 
   private final int value;
 
-  public RomanNumber(String romanValue) {
+  public RomanNumber(String romanValue) 
+  {
     this.value = fromRoman(romanValue);
   }
 
-  public RomanNumber(int value) {
+  public RomanNumber(int value) 
+  {
     this.value = value;
   }
 
   /**
    * @{inheritDoc}
    */
+  /***********************************************************************/
+	/* Methode doubleValue)															                   */
+	/* Entrée :                                         									 */
+	/* 																																		 */
+	/* Sortie : un double                                                  */
+  /* si l'objet qui appel la fonction est un string											 */
+  /* Alors on renvoie un exception                                       */
+	/* Sinon, on renvoie le double	                                       */
+	/***********************************************************************/
   @Override
-  public double doubleValue() {
-    // TODO
-    return 0;
+  public double doubleValue() 
+  {
+    String string;
+    if (this == string)
+    {
+      return IllegalArgumentException();
+    }
+    return this;
+  }
+
+  /**
+   * @{inheritDoc}
+  */
+  /***********************************************************************/
+	/* Methode floatValue()															                   */
+	/* Entrée :                                         									 */
+	/* 																																		 */
+	/* Sortie : un float                                                   */
+  /* si l'objet qui appel la fonction est un string											 */
+  /* Alors on renvoie un exception                                       */
+	/* Sinon, on renvoie le float		                                       */
+	/***********************************************************************/
+  @Override
+  public float floatValue()
+  {
+    String string;
+    if (this == string)
+    {
+      return IllegalArgumentException();
+    }
+    return this;
   }
 
   /**
    * @{inheritDoc}
    */
+  /***********************************************************************/
+	/* Methode intValue ()															                   */
+	/* Entrée :                                         									 */
+	/* 																																		 */
+	/* Sortie : un int                                                     */
+  /* si l'objet qui appel la fonction est un string											 */
+  /* Alors on utilise la méthode fromRoman                               */
+	/* Sinon, on renvoie l'entier		                                       */
+	/***********************************************************************/
   @Override
-  public float floatValue() {
-    // TODO
-    return 0;
+  public int intValue() 
+  {
+    int valeur;
+    String string;
+    if (this = string)
+    {
+      valeur=fromRoman(this);
+    }
+    else
+    {
+      valeur = this;
+    }
+    return valeur;
   }
 
   /**
    * @{inheritDoc}
    */
+  /***********************************************************************/
+	/* Methode longValue()															                   */
+	/* Entrée :                                         									 */
+	/* 																																		 */
+	/* Sortie : un long                                                    */
+  /* si l'objet qui appel la fonction est un string											 */
+  /* Alors on renvoie un exception                                       */
+	/* Sinon, on renvoie le long		                                       */
+	/***********************************************************************/
   @Override
-  public int intValue() {
-    // TODO
-    return 0;
+  public long longValue() 
+  {
+    String string;
+    if (this == string)
+    {
+      return IllegalArgumentException();
+    }
+    return this;
   }
 
-  /**
-   * @{inheritDoc}
-   */
   @Override
-  public long longValue() {
-    // TODO
-    return 0;
-  }
-
-  @Override
-  public String toString() {
+  public String toString() 
+  {
     return toRoman(this.value);
   }
 
@@ -153,10 +219,7 @@ public final class RomanNumber extends Number {
   private static String toRoman(int value) {
     /*On initialise un String vide que l'on completera plus tard*/
     String result = "";
-    /*On initialise une table de symbole*/
-    Set<Entry<String, Integer>> couple = SYMBOLS.entrySet();
-    /*On cree un iterator pour la table de symbole au dessus pour pouvoir la parcourir*/
-    Iterator<Entry<String, Integer>> it = couple.iterator();
+  
     /*Si la valeur donnee en parametre n'est pas valide on envoie une erreur*/
 		if ( value <= 0 && value >= 4000)
 		{
@@ -168,12 +231,20 @@ public final class RomanNumber extends Number {
 		/* On va continuer l'execution jusqu'a ce que la valeur tombe a 0 */
 		while ( value > 0 && iterator.hasNext())
 		{		
+<<<<<<< HEAD
+=======
+        //Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()
+>>>>>>> b468a9a9f035b22efb973c2a24714b16b4921732
 				Map.Entry<String, Integer> e = iterator.next();
 				while ( value > e.getValue() )
 				{
 					result += e.getKey();
 					value = value - e.getValue();
 				}
+<<<<<<< HEAD
+=======
+
+>>>>>>> b468a9a9f035b22efb973c2a24714b16b4921732
 		}
     return result;
   }

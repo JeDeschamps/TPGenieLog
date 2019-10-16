@@ -231,20 +231,13 @@ public final class RomanNumber extends Number
 		/* On va continuer l'execution jusqu'a ce que la valeur tombe a 0 */
 		while ( value > 0 && iterator.hasNext())
 		{		
-<<<<<<< HEAD
-=======
         //Map.Entry<Integer, String> v : KNOWN_VALUES.entrySet()
->>>>>>> b468a9a9f035b22efb973c2a24714b16b4921732
 				Map.Entry<String, Integer> e = iterator.next();
 				while ( value > e.getValue() )
 				{
 					result += e.getKey();
 					value = value - e.getValue();
 				}
-<<<<<<< HEAD
-=======
-
->>>>>>> b468a9a9f035b22efb973c2a24714b16b4921732
 		}
     return result;
   }

@@ -113,17 +113,17 @@ public final class RomanNumber extends Number
   @Override
   public int intValue() 
   {
-    int value;
+    int valeur;
     String string;
     if (this = string)
     {
-      value=fromRoman(this);
+      valeur=fromRoman(this);
     }
     else
     {
-      value = this;
+      valeur = this;
     }
-    return value;
+    return valeur;
   }
 
   /**

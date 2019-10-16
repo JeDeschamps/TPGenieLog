@@ -241,6 +241,23 @@ public final class RomanNumber extends Number
 		}
     return result;
   }
+
+
+  public int compareTo(String rom)
+  {
+    int comp;
+    int valeur;
+    valeur = fromRoman(rom);
+    if(this.value < valeur)
+    {
+      return -1;
+    }
+    else if(this.value > valeur)
+    {
+      return 1;
+    }
+    return 0;
+  }
 }
 
 

@@ -17,7 +17,7 @@ public final class RomanNumber extends Number
   
   public static final long serialVersionUID = 1L;
 
-  // Table des symboles
+  //Table des symboles
   private static final LinkedHashMap<String, Integer> SYMBOLS = new LinkedHashMap<>();
   static 
   {

@@ -60,19 +60,11 @@ public final class RomanNumber extends Number
 	/* Entrée :                                         									 */
 	/* 																																		 */
 	/* Sortie : un double                                                  */
-  /* si l'objet qui appel la fonction est un string											 */
-  /* Alors on renvoie un exception                                       */
-	/* Sinon, on renvoie le double	                                       */
 	/***********************************************************************/
   @Override
   public double doubleValue() 
   {
-    String string;
-    if (this == string)
-    {
-      return IllegalArgumentException();
-    }
-    return this;
+    return (double)valueOf(this.value).value;
   }
 
   /**
@@ -83,19 +75,11 @@ public final class RomanNumber extends Number
 	/* Entrée :                                         									 */
 	/* 																																		 */
 	/* Sortie : un float                                                   */
-  /* si l'objet qui appel la fonction est un string											 */
-  /* Alors on renvoie un exception                                       */
-	/* Sinon, on renvoie le float		                                       */
 	/***********************************************************************/
   @Override
   public float floatValue()
   {
-    String string;
-    if (this == string)
-    {
-      return IllegalArgumentException();
-    }
-    return this;
+		return (float)valueOf(this.value).value;
   }
 
   /**
@@ -106,24 +90,11 @@ public final class RomanNumber extends Number
 	/* Entrée :                                         									 */
 	/* 																																		 */
 	/* Sortie : un int                                                     */
-  /* si l'objet qui appel la fonction est un string											 */
-  /* Alors on utilise la méthode fromRoman                               */
-	/* Sinon, on renvoie l'entier		                                       */
 	/***********************************************************************/
   @Override
   public int intValue() 
   {
-    int valeur;
-    String string;
-    if (this = string)
-    {
-      valeur=fromRoman(this);
-    }
-    else
-    {
-      valeur = this;
-    }
-    return valeur;
+		return (int)valueOf(this.value).value;
   }
 
   /**
@@ -134,19 +105,11 @@ public final class RomanNumber extends Number
 	/* Entrée :                                         									 */
 	/* 																																		 */
 	/* Sortie : un long                                                    */
-  /* si l'objet qui appel la fonction est un string											 */
-  /* Alors on renvoie un exception                                       */
-	/* Sinon, on renvoie le long		                                       */
 	/***********************************************************************/
   @Override
   public long longValue() 
   {
-    String string;
-    if (this == string)
-    {
-      return IllegalArgumentException();
-    }
-    return this;
+		return (long)valueOf(this.value).value;
   }
 
   @Override

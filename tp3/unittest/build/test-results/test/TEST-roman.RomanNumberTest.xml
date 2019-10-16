@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite name="roman.RomanNumberTest" tests="8" skipped="0" failures="2" errors="0" timestamp="2019-10-16T17:37:18" hostname="ubuntuvdi15.sciences.lan" time="0.054">
+<testsuite name="roman.RomanNumberTest" tests="8" skipped="0" failures="2" errors="0" timestamp="2019-10-16T18:21:15" hostname="ubuntuvdi17.sciences.lan" time="0.038">
   <properties/>
-  <testcase name="fromIntValues" classname="roman.RomanNumberTest" time="0.048">
-=======
-<testsuite name="roman.RomanNumberTest" tests="8" skipped="0" failures="2" errors="0" timestamp="2019-10-16T14:39:50" hostname="DESKTOP-4AMQ4FB" time="0.065">
-  <properties/>
-  <testcase name="fromIntValues" classname="roman.RomanNumberTest" time="0.064">
->>>>>>> b468a9a9f035b22efb973c2a24714b16b4921732
-    <failure message="java.lang.AssertionError: &#10;Expected: is &quot;I&quot;&#10;     but: was &lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
+  <testcase name="fromIntValues" classname="roman.RomanNumberTest" time="0.036">
+    <failure message="java.lang.AssertionError: &#10;Expected: is &quot;I&quot;&#10;     but: was &lt;1&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
 Expected: is &quot;I&quot;
-     but: was &lt;0&gt;
+     but: was &lt;1&gt;
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
 	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:8)
 	at roman.RomanNumberTest.fromIntValues(RomanNumberTest.java:94)
@@ -63,24 +57,16 @@ Expected: is &quot;I&quot;
 	at java.lang.Thread.run(Thread.java:748)
 </failure>
   </testcase>
-<<<<<<< HEAD
-  <testcase name="floatNumber" classname="roman.RomanNumberTest" time="0.001"/>
-=======
   <testcase name="floatNumber" classname="roman.RomanNumberTest" time="0.0"/>
->>>>>>> b468a9a9f035b22efb973c2a24714b16b4921732
   <testcase name="tooMuchRep" classname="roman.RomanNumberTest" time="0.0"/>
   <testcase name="outOfBound" classname="roman.RomanNumberTest" time="0.0"/>
   <testcase name="negativeValue" classname="roman.RomanNumberTest" time="0.0"/>
-  <testcase name="fromRomanKnownValues" classname="roman.RomanNumberTest" time="0.0">
+  <testcase name="fromRomanKnownValues" classname="roman.RomanNumberTest" time="0.001">
     <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
-	at roman.RomanNumber.fromRoman(RomanNumber.java:129)
-	at roman.RomanNumber.&lt;init&gt;(RomanNumber.java:44)
-	at roman.RomanNumber.valueOf(RomanNumber.java:98)
-<<<<<<< HEAD
-	at roman.RomanNumberTest.fromRomanKnownValues(RomanNumberTest.java:81)
-=======
+	at roman.RomanNumber.fromRoman(RomanNumber.java:158)
+	at roman.RomanNumber.&lt;init&gt;(RomanNumber.java:47)
+	at roman.RomanNumber.valueOf(RomanNumber.java:127)
 	at roman.RomanNumberTest.fromRomanKnownValues(RomanNumberTest.java:85)
->>>>>>> b468a9a9f035b22efb973c2a24714b16b4921732
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -130,11 +116,7 @@ Expected: is &quot;I&quot;
 	at java.lang.Thread.run(Thread.java:748)
 </failure>
   </testcase>
-<<<<<<< HEAD
-  <testcase name="toRomanZero" classname="roman.RomanNumberTest" time="0.001"/>
-=======
   <testcase name="toRomanZero" classname="roman.RomanNumberTest" time="0.0"/>
->>>>>>> b468a9a9f035b22efb973c2a24714b16b4921732
   <testcase name="impossiblePreviousPredecessor" classname="roman.RomanNumberTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

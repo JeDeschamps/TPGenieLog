@@ -7,10 +7,11 @@ public class Reservation
     public ZonedDateTime date;
     public Double identifiant;
     public String etat;
+		public Vol vol;
 
     public Reservation(String nom, String contact)
     {
-        Vol vol = getInstanceVol();
+        this.vol.getInstanceVol();
         Passager passager = new Passager(nom, contact);
         this.date = vol.getDepart();
         this.etat = "en attente";

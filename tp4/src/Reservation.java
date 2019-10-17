@@ -1,4 +1,6 @@
 import java.util.*;
+import java.lang.Object;
+import java.time.*;
 
 public class Reservation
 {
@@ -6,10 +8,10 @@ public class Reservation
     public Double identifiant;
     public String etat;
 
-    public Reservation()
+    public Reservation(String nom, String contact)
     {
-        Vol vol = new Vol();
-        Passager passager = new Passager();
+        Vol vol = getInstance();
+        Passager passager = new Passager(nom, contact);
         this.date = vol.getDepart();
         this.etat = "en attente";
     }

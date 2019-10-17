@@ -5,14 +5,16 @@ import java.time.*;
 public class Reservation
 {
     public ZonedDateTime date;
-    public Double identifiant;
+    public idIdentifiant identifiant;
     public String etat;
-		public Vol vol;
+    public Vol vol;
+    private Passager passager;
 
     public Reservation(String nom, String contact)
     {
         this.vol.getInstanceVol();
-        Passager passager = new Passager(nom, contact);
+        this.passager.getPassager();
+        this.identifiant = identifiant.getIdentifiant();
         this.date = vol.getDepart();
         this.etat = "en attente";
     }

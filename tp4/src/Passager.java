@@ -10,4 +10,9 @@ public class Passager
         this.nom = nom_;
         this.contact = contact_;
     }
+
+    public Passager getPassager()
+    {
+        return this;
+    }
 }

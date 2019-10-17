@@ -6,13 +6,18 @@ public class Vol
 	private final String identifiant;
 	private ZonedDateTime depart;
 	private ZonedDateTime arrivee;
-	public Vol(String idvol, ZonedDateTime dateDepart, ZonedDateTime dateArrivee)
+	private boolean statut;
+	private Vol(String idvol, ZonedDateTime dateDepart, ZonedDateTime dateArrivee)
 	{
 		this.identifiant = idvol;
 		this.depart = dateDepart;
 		this.arrivee = dateArrivee;
+		this.statut = false;//On considère que de base le vol n'est pas ouvert à la reservation
 	}
-
+	public static Vol getInstanceVol()
+	{
+		
+	}
 	public ZonedDateTime getDepart()
 	{
 		return this.depart;
@@ -22,9 +27,22 @@ public class Vol
 	/***********************************************************************/
 	public Duration duree()
 	{
-		ZonedDateTime tmp1 = arrivee;
-		ZonedDateTime tmp2 = getDepart();
-		Duration d = Duration.between(tmp1, tmp2);
+		Duration d = Duration.between(this.arrivee, this.depart);
 		return d;
 	}
+	public void ouvrir()
+	{
+		this.statut = true;
+	}
+	public void fermee()
+	{
+		this.statut = false;
+	}
+	public boolean getStatut()
+	{
+		return this.statut;
+	}	
+
+
+	
 }

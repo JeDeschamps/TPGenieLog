@@ -4,7 +4,7 @@ import java.time.*;
 
 public class Reservation
 {
-    public Date date;
+    public ZoneDateTime date;
     public Double identifiant;
     public String etat;
 

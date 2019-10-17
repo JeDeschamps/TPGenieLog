@@ -4,13 +4,13 @@ import java.time.*;
 
 public class Reservation
 {
-    public ZoneDateTime date;
+    public ZonedDateTime date;
     public Double identifiant;
     public String etat;
 
     public Reservation(String nom, String contact)
     {
-        Vol vol = getInstance();
+        Vol vol = getInstanceVol();
         Passager passager = new Passager(nom, contact);
         this.date = vol.getDepart();
         this.etat = "en attente";

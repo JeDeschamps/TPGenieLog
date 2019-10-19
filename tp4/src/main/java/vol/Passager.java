@@ -1,14 +1,24 @@
 package vol;
 
+/***********************************************************************/
+/* Classe Passager																										 */
+/* Attributs : string nom et contact pour l'identite de la personne et */
+/* on lui passe en attribut le vol qui le concerne										 */
+/* 																																		 */
+/* Implémente : un constructeur public et un getter pour récupérer 		 */
+/* l'instance du passager																							 */
+/***********************************************************************/
+
 public class Passager
 {
     private String nom;
     private String contact;
+		private Reservation reservation;
 
     /*************************************************************/
     /* Constructeur de Passager:                                 */
     /* Entrée: Des String pour initialiser le nom, le moyen      */
-    /*      d'etre contacter.                                    */
+    /* d'être contacté et le vol qui le concerne                 */
     /*                                                           */
     /* Sortie: Aucune                                            */
     /*************************************************************/
@@ -17,6 +27,7 @@ public class Passager
     {
         this.nom = nom_;
         this.contact = contact_;
+				this.reservation = this.reservation.getReservation();
     }
 
     public Passager getPassager()

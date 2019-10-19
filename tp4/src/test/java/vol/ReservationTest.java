@@ -10,17 +10,19 @@ import java.time.*;
 public class ReservationTest
 {
     public ZonedDateTime date;
-    public IdIdentifiant identifiant;
+    public IdReservation identifiant;
     public Etat etat;
     public Vol vol;
     private Passager passager;
+		public Reservation reservation;
 
 
 
-    @Test 
+    @Test(expected = NullPointerException.class)
     public void annuler()
     {
         this.etat = null;
+				reservation.confirmer();
     }
 
 

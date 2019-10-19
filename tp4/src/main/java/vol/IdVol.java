@@ -7,11 +7,11 @@ public class IdVol
 
     /*************************************************************/
     /* Constructeur d'IdVol:                                     */
-    /* Entree: Aucune                                            */
+    /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: Aucune                                            */
     /*                                                           */
-    /* On utilise l'attribue prive de la classe afin de l'incre- */
+    /* On utilise l'attribue privé de la classe afin de l'incre- */
     /* menter à chaque appel. Cela nous donne un id unique.      */
     /* A l'aide de toString, on transforme l'int id en un String.*/
     /*************************************************************/
@@ -25,8 +25,8 @@ public class IdVol
     private static IdVol Instance = new IdVol();
 
     /*************************************************************/
-    /* Methode toString:                                         */
-    /* Entree: Aucune                                            */
+    /* Méthode toString:                                         */
+    /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: String                                            */
     /*                                                           */

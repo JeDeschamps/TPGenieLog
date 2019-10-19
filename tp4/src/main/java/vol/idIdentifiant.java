@@ -6,11 +6,11 @@ public class IdIdentifiant
 
     /*************************************************************/
     /* Constructeur d'IdIdentifiant:                             */
-    /* Entree: Aucune                                            */
+    /* Entrée: Aucune                                            */
     /*                                                           */
-    /* Sortie: Aucune                                           */
+    /* Sortie: Aucune                                            */
     /*                                                           */
-    /* On utilise l'attribue prive de la classe afin de l'incre- */
+    /* On utilise l'attribue privé de la classe afin de l'incré- */
     /* menter à chaque appel. Cela nous donne un id unique.      */
     /*************************************************************/
 

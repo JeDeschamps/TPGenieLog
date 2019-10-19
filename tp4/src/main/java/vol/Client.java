@@ -9,8 +9,8 @@ public class Client
 
     /*************************************************************/
     /* Constructeur de Client:                                   */
-    /* Entree: Des String pour initialiser le nom, le paiement   */
-    /*      qui correspond au moyen de paiement, le moyen d'etre */
+    /* Entrée: Des String pour initialiser le nom, le paiement   */
+    /*      qui correspond au moyen de paiement, le moyen d'être */
     /*      contacter et enfin une ref qui sera unique           */
     /*                                                           */
     /* Sortie: Aucune                                            */

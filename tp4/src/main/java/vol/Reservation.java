@@ -14,7 +14,7 @@ public class Reservation
 
     /*************************************************************/
     /* Constructeur de Reservation:                              */
-    /* Entree: Aucune                                            */
+    /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: Aucune                                            */
     /*                                                           */
@@ -31,16 +31,16 @@ public class Reservation
     }
 
     /*************************************************************/
-    /* Methode annuler:                                          */
-    /* Entree: Aucune                                            */
+    /* Méthode annuler:                                          */
+    /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: Aucune                                            */
     /*                                                           */
     /* On regarde d'abord le status du vol, savoir s'il est      */
-    /* ouvert ou fermer. Et aussi l'etat de la reservation.      */
-    /* Si la reservation n'est pas déjà annuler et que le vol    */
-    /* est toujours disponible, alors on change l'etat de la     */
-    /* reservation en Annuler. Sinon on affiche un message       */
+    /* ouvert ou fermé et aussi l'état de la réservation.        */
+    /* Si la réservation n'est pas déjà annuler et que le vol    */
+    /* est toujours disponible, alors on change l'état de la     */
+    /* réservation en ANNULER. Sinon on affiche un message       */
     /* d'erreur.                                                 */
     /*************************************************************/
 
@@ -58,16 +58,16 @@ public class Reservation
     }
 
     /*************************************************************/
-    /* Methode confirmer:                                        */
-    /* Entree: Aucune                                            */
+    /* Méthode confirmer:                                        */
+    /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: Aucune                                            */
     /*                                                           */
     /* On regarde d'abord le status du vol, savoir s'il est      */
-    /* ouvert ou fermer. Et aussi l'etat de la reservation.      */
-    /* Si la reservation est payer et que le vol est toujours    */
-    /* disponible, alors on change l'etat de la reservation      */
-    /* en Annuler. Sinon on affiche un message d'erreur.         */
+    /* ouvert ou fermé et aussi l'état de la réservation.        */
+    /* Si la réservation est payer et que le vol est toujours    */
+    /* disponible, alors on change l'état de la reservation      */
+    /* en CONFIRMER. Sinon on affiche un message d'erreur.       */
     /*************************************************************/
 
     public void confirmer()
@@ -84,16 +84,16 @@ public class Reservation
     }
 
     /*************************************************************/
-    /* Methode payer:                                            */
-    /* Entree: Aucune                                            */
+    /* Méthode payer:                                            */
+    /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: Aucune                                            */
     /*                                                           */
     /* On regarde d'abord le status du vol, savoir s'il est      */
-    /* ouvert ou fermer. Et aussi l'etat de la reservation.      */
-    /* Si la reservation est en attente et que le vol est        */
-    /* toujours disponible, alors on change l'etat de la         */
-    /* reservation en Annuler. Sinon on affiche un message       */
+    /* ouvert ou fermé et aussi l'état de la réservation.        */
+    /* Si la réservation est en attente et que le vol est        */
+    /* toujours disponible, alors on change l'état de la         */
+    /* réservation en PAYER. Sinon on affiche un message         */
     /* d'erreur.                                                 */
     /*************************************************************/
 
@@ -111,8 +111,8 @@ public class Reservation
     }
 
     /*************************************************************/
-    /* On cree une classe interne Etat qui correspondra aux      */
-    /* different etats que peut prendre la Reservation.          */
+    /* On crée une classe interne Etat qui correspondra aux      */
+    /* differents états que peut prendre la réservation.         */
     /*************************************************************/
 
     enum Etat 

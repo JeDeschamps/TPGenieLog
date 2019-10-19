@@ -7,11 +7,11 @@ public class IdClient
 
     /*************************************************************/
     /* Constructeur d'IdClient:                                  */
-    /* Entree: Aucune                                            */
+    /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: Aucune                                            */
     /*                                                           */
-    /* On utilise l'attribue prive de la classe afin de l'incre- */
+    /* On utilise l'attribue privé de la classe afin de l'incré- */
     /* menter à chaque appel. Cela nous donne un id Client unique*/
     /*************************************************************/
 

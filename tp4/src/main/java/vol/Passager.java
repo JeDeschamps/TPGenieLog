@@ -7,7 +7,7 @@ public class Passager
 
     /*************************************************************/
     /* Constructeur de Passager:                                 */
-    /* Entree: Des String pour initialiser le nom, le moyen      */
+    /* Entrée: Des String pour initialiser le nom, le moyen      */
     /*      d'etre contacter.                                    */
     /*                                                           */
     /* Sortie: Aucune                                            */

@@ -21,6 +21,7 @@ public class Vol
 	
 	private static Vol Instance = new Vol(id,departure,arrival);
 
+	/***********************************************************************/
 	public static Vol getInstanceVol()
 	{
 		return Instance;

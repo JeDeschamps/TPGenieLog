@@ -1,10 +1,20 @@
-
-
+package vol;
 
 public class IdVol
 {
     private int indent= 00000;
     private String id;
+
+    /*************************************************************/
+    /* Constructeur d'IdVol:                                     */
+    /* Entree: Aucune                                            */
+    /*                                                           */
+    /* Sortie: Aucune                                            */
+    /*                                                           */
+    /* On utilise l'attribue prive de la classe afin de l'incre- */
+    /* menter à chaque appel. Cela nous donne un id unique.      */
+    /* A l'aide de toString, on transforme l'int id en un String.*/
+    /*************************************************************/
 
     private IdVol()
     {
@@ -13,6 +23,16 @@ public class IdVol
     }
 
     private static IdVol Instance = new IdVol();
+
+    /*************************************************************/
+    /* Methode toString:                                         */
+    /* Entree: Aucune                                            */
+    /*                                                           */
+    /* Sortie: String                                            */
+    /*                                                           */
+    /* Transforme l'indent qui est un int en un String et le     */
+    /* retourne.                                                 */
+    /*************************************************************/
 
     public String toString()
     {

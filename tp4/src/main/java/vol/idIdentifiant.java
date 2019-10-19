@@ -1,17 +1,27 @@
+package vol;
 
-
-public class idIdentifiant
+public class IdIdentifiant
 {
     private double indent= 0000;
 
-    private idIdentifiant()
+    /*************************************************************/
+    /* Constructeur d'IdIdentifiant:                             */
+    /* Entree: Aucune                                            */
+    /*                                                           */
+    /* Sortie: Aucune                                           */
+    /*                                                           */
+    /* On utilise l'attribue prive de la classe afin de l'incre- */
+    /* menter à chaque appel. Cela nous donne un id unique.      */
+    /*************************************************************/
+
+    private IdIdentifiant()
     {
         this.indent = this.indent + 1;
     }
 
-    private static idIdentifiant Instance = new idIdentifiant();
+    private static IdIdentifiant Instance = new IdIdentifiant();
 
-    public static idIdentifiant getIdentifiant()
+    public static IdIdentifiant getIdentifiant()
     {
         return Instance;
     }

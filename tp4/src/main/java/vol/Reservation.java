@@ -1,3 +1,5 @@
+package vol;
+
 import java.util.*;
 import java.lang.Object;
 import java.time.*;
@@ -5,12 +7,21 @@ import java.time.*;
 public class Reservation
 {
     public ZonedDateTime date;
-    public idIdentifiant identifiant;
+    public IdIdentifiant identifiant;
     public Etat etat;
     public Vol vol;
     private Passager passager;
 
-    public Reservation(String nom, String contact)
+    /*************************************************************/
+    /* Constructeur de Reservation:                              */
+    /* Entree: Aucune                                            */
+    /*                                                           */
+    /* Sortie: Aucune                                            */
+    /*                                                           */
+    /* On initialise les attribus de la classe.                  */
+    /*************************************************************/
+
+    public Reservation()
     {
         this.vol.getInstanceVol();
         this.passager.getPassager();
@@ -18,6 +29,20 @@ public class Reservation
         this.date = vol.getDepart();
         this.etat = Etat.ATTENTE;
     }
+
+    /*************************************************************/
+    /* Methode annuler:                                          */
+    /* Entree: Aucune                                            */
+    /*                                                           */
+    /* Sortie: Aucune                                            */
+    /*                                                           */
+    /* On regarde d'abord le status du vol, savoir s'il est      */
+    /* ouvert ou fermer. Et aussi l'etat de la reservation.      */
+    /* Si la reservation n'est pas déjà annuler et que le vol    */
+    /* est toujours disponible, alors on change l'etat de la     */
+    /* reservation en Annuler. Sinon on affiche un message       */
+    /* d'erreur.                                                 */
+    /*************************************************************/
 
     public void annuler()
     {
@@ -32,6 +57,19 @@ public class Reservation
         }
     }
 
+    /*************************************************************/
+    /* Methode confirmer:                                        */
+    /* Entree: Aucune                                            */
+    /*                                                           */
+    /* Sortie: Aucune                                            */
+    /*                                                           */
+    /* On regarde d'abord le status du vol, savoir s'il est      */
+    /* ouvert ou fermer. Et aussi l'etat de la reservation.      */
+    /* Si la reservation est payer et que le vol est toujours    */
+    /* disponible, alors on change l'etat de la reservation      */
+    /* en Annuler. Sinon on affiche un message d'erreur.         */
+    /*************************************************************/
+
     public void confirmer()
     {
         boolean test = this.vol.getStatut();
@@ -45,6 +83,20 @@ public class Reservation
         }
     }
 
+    /*************************************************************/
+    /* Methode payer:                                            */
+    /* Entree: Aucune                                            */
+    /*                                                           */
+    /* Sortie: Aucune                                            */
+    /*                                                           */
+    /* On regarde d'abord le status du vol, savoir s'il est      */
+    /* ouvert ou fermer. Et aussi l'etat de la reservation.      */
+    /* Si la reservation est en attente et que le vol est        */
+    /* toujours disponible, alors on change l'etat de la         */
+    /* reservation en Annuler. Sinon on affiche un message       */
+    /* d'erreur.                                                 */
+    /*************************************************************/
+
     public void payer()
     {
         boolean test = this.vol.getStatut();
@@ -57,6 +109,11 @@ public class Reservation
             System.out.println("Vous ne pouvez pas payer une reservation déjà payer, confirmer, annuler ou fermer.");
         }
     }
+
+    /*************************************************************/
+    /* On cree une classe interne Etat qui correspondra aux      */
+    /* different etats que peut prendre la Reservation.          */
+    /*************************************************************/
 
     enum Etat 
     {

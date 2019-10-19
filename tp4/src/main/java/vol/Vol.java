@@ -1,3 +1,5 @@
+package vol;
+
 import java.lang.Object;
 import java.time.*;
 
@@ -7,6 +9,7 @@ public class Vol
 	private ZonedDateTime depart;
 	private ZonedDateTime arrivee;
 	private boolean statut;
+
 	private Vol(IdVol idvol, ZonedDateTime dateDepart, ZonedDateTime dateArrivee)
 	{
 		this.identifiant = idvol.toString();
@@ -14,6 +17,7 @@ public class Vol
 		this.arrivee = dateArrivee;
 		this.statut = false;//On considère que de base le vol n'est pas ouvert à la reservation
 	}
+	
 	/* Instance unique pré-initialisée */
 	private static ZonedDateTime departure;
 	private static ZonedDateTime arrival;
@@ -30,7 +34,7 @@ public class Vol
 		return this.depart;
 	}
 	/***********************************************************************/
-	/* Debut de l'implementation des methodes duree ouvrir et fermer			 */
+	/* Debut de l'implementation des methodes duree ouvrir et fermer	   */
 	/***********************************************************************/
 	public Duration duree()
 	{

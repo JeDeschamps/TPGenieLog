@@ -1,5 +1,7 @@
 package vol;
 
+import java.util.*;
+
 /***********************************************************************/
 /* Classe Client																											 */
 /* Attributs : des strings pour le nom, le paiement, le moyen de 			 */
@@ -17,7 +19,7 @@ public class Client
     private String paiement;
     private String contact;
     private IdClient reference;
-		private Reservation[] reservation;
+		private ArrayList<Reservation> reservation = new ArrayList<Reservation>();
 
     /*************************************************************/
     /* Constructeur de Client:                                   */
@@ -33,11 +35,12 @@ public class Client
         this.nom = nom_;
         this.paiement = paiement_;
         this.contact = contact_;
-        this.reference = ref_;
-        for (int i = 0; i < this.reservation.length; i++)
-        {
-          this.reservation[i] = this.reservation[i].getReservation();
-        }
+				this.reference = ref_;
+				for (int i = 0; i < this.reservation.size(); i++)
+				{
+					this.reservation.get(i) = this.reservation.get(i).getReservation();
+				}
+
     }
 		/***********************************************************************/
 		/* On implémente les appels  des méthodes de réservation dans client	 */
@@ -46,17 +49,17 @@ public class Client
 		/***********************************************************************/	
 		private void confirmation(int index)
 		{
-			this.reservation[index].confirmer();
+			this.reservation.get(index).confirmer();
 		}
 		
 		private void paiement(int index)
 		{
-			this.reservation[index].payer();
+			this.reservation.get(index).payer();
 		}
 			
 		private void annulation(int index)
 		{
-				this.reservation[index].annuler();
+				this.reservation.get(index).annuler();
 		}
 		/***********************************************************************/
 		/* On crée un accesseur																								 */

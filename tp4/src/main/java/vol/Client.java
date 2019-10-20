@@ -17,7 +17,7 @@ public class Client
     private String paiement;
     private String contact;
     private IdClient reference;
-		private Reservation reservation;
+		private Reservation[] reservation;
 
     /*************************************************************/
     /* Constructeur de Client:                                   */
@@ -34,26 +34,29 @@ public class Client
         this.paiement = paiement_;
         this.contact = contact_;
         this.reference = ref_;
-				this.reservation = this.reservation.getInstanceReservation();
+        for (int i = 0; i < this.reservation.length; i++)
+        {
+          this.reservation[i] = this.reservation[i].getReservation();
+        }
     }
 		/***********************************************************************/
 		/* On implémente les appels  des méthodes de réservation dans client	 */
 		/* pour plus de logique on les met en private pour respecter					 */
 		/* l'encapsulation																										 */
 		/***********************************************************************/	
-		private void confirmation()
+		private void confirmation(int index)
 		{
-			this.reservation.confirmer();
+			this.reservation[index].confirmer();
 		}
 		
-		private void paiement()
+		private void paiement(int index)
 		{
-			this.reservation.payer();
+			this.reservation[index].payer();
 		}
 			
-		private void annulation()
+		private void annulation(int index)
 		{
-				this.reservation.annuler();
+				this.reservation[index].annuler();
 		}
 		/***********************************************************************/
 		/* On crée un accesseur																								 */

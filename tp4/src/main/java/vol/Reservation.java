@@ -9,7 +9,7 @@ import java.time.*;
 	/* Attributs : Une ZonedDateTime qui correspond à la date de départ du */
 	/* vol, un identifiant unique, un état de la réservation donc les 		 */
 	/* valeurs possibles sont définies dans la classe interne enum ETAT,	 */
-	/* un Vol et un passager concernés par la réservation qui sont définis */
+  /* un Vol et un passager concernés par la réservation qui sont définies*/
 	/* dans les navigabilités du diagramme UML														 */
 	/*																																		 */
 	/* Implémente : un constructeur public et des setters publics qui 		 */
@@ -21,8 +21,8 @@ public class Reservation
     private IdReservation identifiant;
     private Etat etat;
     private Vol vol;
-    private Passager passager;
-		private Client client;
+    private Passager[] passager;
+		private Client[] client;
 
     /*************************************************************/
     /* Constructeur de Reservation:                              */
@@ -36,12 +36,26 @@ public class Reservation
     private Reservation()
     {
         this.vol.getInstanceVol();
-        this.passager.getPassager();
         this.identifiant = identifiant.getIdentifiant();
         this.date = vol.getDepart();
         this.etat = Etat.ATTENTE;
-				this.passager = passager.getPassager(); 
-				this.client = client.getClient();	
+				this.client[0] = this.client[0].getClient(); //Pour s'assurer d'avoir au moins 1 client
+        this.passager[0] = this.passager[0].getPassager();// 1 passager au moins
+        /*On vérifie que c'est bien nécessaire et possible d'instancier la suite du tableau */
+        if (this.client.length >= 1)
+        {
+          for (int i = 1; i < this.client.length; i++)
+          {
+            this.client[i] = this.client[i].getClient();
+          }
+        }
+        if (this.passager.length >= 1)
+        {     
+          for (int i = 1; i < this.passager.length; i++)
+          {
+            this.passager[i] = this.passager[i].getPassager();
+          }
+        }
     }
 		
 		/*************************************************************/
@@ -79,14 +93,6 @@ public class Reservation
         }
     }
 
-		/*************************************************************/
-		/* On crée un getter de l'instance de la résérvation				 */
-		/*************************************************************/
-		public Reservation getInstanceReservation()
-		{
-			return this;
-		}
-		
 
     /*************************************************************/
     /* Méthode confirmer:                                        */
@@ -111,7 +117,6 @@ public class Reservation
         else
         {
             System.out.println("Vous devez d'abord payer avant de confirmer ou vous ne pouvez pas confirmer une réservation déjà annuler ou fermer.");
-						throw new IllegalArgumentException("Vous devez d'abord payer avant de confirmer ou vous ne pouvez pas confirmer une réservation déjà annuler ou fermer.");
         }
     }
 

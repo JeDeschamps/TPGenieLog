@@ -13,7 +13,7 @@ public class Passager
 {
     private String nom;
     private String contact;
-		private Reservation reservation;
+		private Reservation[] reservation;
 
     /*************************************************************/
     /* Constructeur de Passager:                                 */
@@ -27,7 +27,10 @@ public class Passager
     {
         this.nom = nom_;
         this.contact = contact_;
-				this.reservation = this.reservation.getReservation();
+        for (int i = 0; i < this.reservation.length; i++)
+        {
+          this.reservation[i] = this.reservation[i].getReservation();
+        }
     }
 
     public Passager getPassager()

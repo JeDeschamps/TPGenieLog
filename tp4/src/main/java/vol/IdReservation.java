@@ -1,9 +1,9 @@
 package vol;
 
 /*************************************************************/
-/* Classe IdClient																					 */
+/* Classe IdReservation 																		 */
 /* Classe variante d'un singleton qui permet d'obtenir un 	 */
-/* identifiant client unique																 */
+/* identifiant réservation unique														 */
 /*																													 */
 /* Attribut : un attribut static pour qu'il soit commun à 	 */
 /* la classe et pas aux instances de la classe qui correspond*/
@@ -14,28 +14,32 @@ package vol;
 /* que réservation récupère son identifiant	 								 */
 /*************************************************************/
 
-public class IdClient
+public class IdReservation
 {
-    
-    private int indent= 0000;
+    private static double indent = 0000;
 
     /*************************************************************/
-    /* Constructeur d'IdClient:                                  */
+    /* Constructeur d'IdReservation:                             */
     /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: Aucune                                            */
+    /*                                                           */
+		/* Le constructeur n'a pas de corps, l'attribut est déjà 		 */
+		/* instancié à 0000																					 */
     /*************************************************************/
 
-    private IdClient()
+    private IdReservation()
     {
     }
 
-    private static IdClient Instance = new IdClient();
+    private static IdReservation Instance = new IdReservation();
 
-    public IdClient getRef()
+    public IdReservation getIdentifiant()
     {
-				/* Même principe que pour IdIdentifiant */
+				/* Le getter incrémente l'attribut puis le retourne */
+				/* pourrait être risqué notamment en cas d'appel concurrent de la fonction */
 				Instance.indent = Instance.indent + 1;
         return Instance;
     }
 }
+

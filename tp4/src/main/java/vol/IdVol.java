@@ -1,25 +1,34 @@
 package vol;
 
+/*************************************************************/
+/* Classe IdIdentifiant																			 */
+/* Classe variante d'un singleton qui permet d'obtenir un 	 */
+/* identifiant réservation unique														 */
+/*																													 */
+/* Attribut : un attribut static pour qu'il soit commun à 	 */
+/* la classe et pas aux instances de la classe qui correspond*/
+/* à l'identifiant initial et on incrémentera sur celui-ci 	 */
+/* pour en obtenir un nouveau																 */
+/*																													 */
+/* Implémente : un singleton et un getter public pour 			 */
+/* que réservation récupère son identifiant également une		 */
+/* méthode toString parce que l'identifiant de Vol doit être */
+/* une String																								 */
+/*************************************************************/
+
 public class IdVol
 {
     private int indent= 00000;
-    private String id;
 
     /*************************************************************/
     /* Constructeur d'IdVol:                                     */
     /* Entrée: Aucune                                            */
     /*                                                           */
     /* Sortie: Aucune                                            */
-    /*                                                           */
-    /* On utilise l'attribue privé de la classe afin de l'incre- */
-    /* menter à chaque appel. Cela nous donne un id unique.      */
-    /* A l'aide de toString, on transforme l'int id en un String.*/
     /*************************************************************/
 
     private IdVol()
     {
-        this.indent = this.indent + 1;
-        id = toString();
     }
 
     private static IdVol Instance = new IdVol();
@@ -39,8 +48,9 @@ public class IdVol
         return String.valueOf(this.indent);
     }
 
-    public static IdVol getIdVol()
+    public String getIdVol()
     {
-        return Instance;
+				Instance.indent = Instance.indent + 1;
+        return toString();
     }
 }

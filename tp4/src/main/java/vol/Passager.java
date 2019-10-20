@@ -1,5 +1,7 @@
 package vol;
 
+import java.util.*;
+
 /***********************************************************************/
 /* Classe Passager																										 */
 /* Attributs : string nom et contact pour l'identite de la personne et */
@@ -13,7 +15,7 @@ public class Passager
 {
     private String nom;
     private String contact;
-		private Reservation[] reservation;
+		private ArrayList<Reservation> reservation;
 
     /*************************************************************/
     /* Constructeur de Passager:                                 */
@@ -23,14 +25,11 @@ public class Passager
     /* Sortie: Aucune                                            */
     /*************************************************************/
 
-    public Passager(String nom_, String contact_)
+    public Passager(String nom_, String contact_, ArrayList<Reservation> listeReservation)
     {
         this.nom = nom_;
         this.contact = contact_;
-        for (int i = 0; i < this.reservation.length; i++)
-        {
-          this.reservation[i] = this.reservation[i].getReservation();
-        }
+        this.reservation.addAll(listeReservation);
     }
 
     public Passager getPassager()

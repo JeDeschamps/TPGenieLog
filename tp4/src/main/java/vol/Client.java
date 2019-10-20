@@ -30,16 +30,14 @@ public class Client
     /* Sortie: Aucune                                            */
     /*************************************************************/
 
-    private Client(String nom_, String paiement_, String contact_, IdClient ref_)
+    private Client(String nom_, String paiement_, String contact_, IdClient ref_, ArrayList<Reservation> listeReservation)
     {
         this.nom = nom_;
         this.paiement = paiement_;
         this.contact = contact_;
 				this.reference = ref_;
-				for (int i = 0; i < this.reservation.size(); i++)
-				{
-					this.reservation.get(i) = this.reservation.get(i).getReservation();
-				}
+        this.reservation.addAll(listeReservation); // On lui passe en parametre toutes les reservations à ajouter
+        // A partir de là on pourrait créer des fonctions qui rajoutent/suppriment des reservations
 
     }
 		/***********************************************************************/

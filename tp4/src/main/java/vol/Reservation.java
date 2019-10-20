@@ -21,8 +21,8 @@ public class Reservation
     private IdReservation identifiant;
     private Etat etat;
     private Vol vol;
-    private Passager[] passager;
-		private Client[] client;
+    private ArrayList<Passager> passager;
+		private Client client;
 
     /*************************************************************/
     /* Constructeur de Reservation:                              */
@@ -33,29 +33,17 @@ public class Reservation
     /* On initialise les attribus de la classe.                  */
     /*************************************************************/
 
-    private Reservation()
+    private Reservation(Passager passagerObligatoire, ArrayList<Passager> listePassagers)
     {
         this.vol.getInstanceVol();
         this.identifiant = identifiant.getIdentifiant();
         this.date = vol.getDepart();
         this.etat = Etat.ATTENTE;
-				this.client[0] = this.client[0].getClient(); //Pour s'assurer d'avoir au moins 1 client
-        this.passager[0] = this.passager[0].getPassager();// 1 passager au moins
-        /*On vérifie que c'est bien nécessaire et possible d'instancier la suite du tableau */
-        if (this.client.length >= 1)
-        {
-          for (int i = 1; i < this.client.length; i++)
-          {
-            this.client[i] = this.client[i].getClient();
-          }
-        }
-        if (this.passager.length >= 1)
-        {     
-          for (int i = 1; i < this.passager.length; i++)
-          {
-            this.passager[i] = this.passager[i].getPassager();
-          }
-        }
+				this.client = this.client.getClient();
+
+        this.passager.add(passagerObligatoire);// 1 passager au moins
+        /* On rajoute toutes les autres valeurs passées en parametre */
+        this.passager.addAll(listePassagers);
     }
 		
 		/*************************************************************/
